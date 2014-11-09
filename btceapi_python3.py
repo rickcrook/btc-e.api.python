@@ -11,7 +11,7 @@ import hashlib
 import hmac
 import time
 
-class api:
+class btce_api:
  __api_key	= '';
  __api_secret	= '';
  __nonce_v	= 1;
@@ -44,6 +44,9 @@ class api:
   data = json.loads(response)
   conn.close()
   return data
+
+ def getTicker(self, couple):
+  return self.get_param(couple,'ticker')['ticker']
   
  def get_param(self, couple, param):
   conn = http.client.HTTPSConnection("btc-e.com")
@@ -53,6 +56,8 @@ class api:
   conn.close()
   return data
  
+#https://btc-e.com/api/2/ltc_btc/ticker
+
  def getInfo(self):
   return self.__api_call('getInfo', {})
 
