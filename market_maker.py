@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+'''
+@author Richard Crook
+@description Simple example automated market maker on BTCe exchange for LTC/BTC asset pair
+@date Nov 2014  
+'''
 
 from btceapi_python3 import btce_api
 from json import dumps
@@ -18,7 +23,7 @@ api_secret = f.readline().strip()
 # static
 pair = 'ltc_btc'
 margin = 0.5 / 100 # 0.2% x2 fee + 0.1% profit
-delay = 60 # period in seconds between api calls
+delay = 60 # period in seconds before checking orders
 amount = 0.1 # minimum on btce is 0.1 LTC
 fee = 0.2 / 100 # fee on btce is 0.2
 
